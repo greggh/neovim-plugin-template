@@ -1,8 +1,13 @@
 # Neovim Plugin Template
 
-[![GitHub License](https://img.shields.io/github/license/greggh/plugin-name?style=flat-square)](./LICENSE)
-[![Neovim Minimum Version](https://img.shields.io/badge/Neovim-0.8+-57A143?style=flat-square&logo=neovim)](https://neovim.io)
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/greggh/plugin-name/ci.yml?branch=main&style=flat-square&logo=github)](https://github.com/greggh/plugin-name/actions/workflows/ci.yml)
+[![GitHub License](https://img.shields.io/github/license/greggh/neovim-plugin-template?style=flat-square)](https://github.com/greggh/neovim-plugin-template/blob/main/LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/greggh/neovim-plugin-template?style=flat-square)](https://github.com/greggh/neovim-plugin-template/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/greggh/neovim-plugin-template?style=flat-square)](https://github.com/greggh/neovim-plugin-template/issues)
+[![GitHub Last Commit](https://img.shields.io/github/last-commit/greggh/neovim-plugin-template?style=flat-square)](https://github.com/greggh/neovim-plugin-template/commits/main)
+[![Neovim Version](https://img.shields.io/badge/Neovim-0.8%2B-blueviolet?style=flat-square&logo=neovim)](https://github.com/neovim/neovim)
+[![CI](https://img.shields.io/github/actions/workflow/status/greggh/neovim-plugin-template/ci.yml?branch=main&style=flat-square&logo=github)](https://github.com/greggh/neovim-plugin-template/actions/workflows/ci.yml)
+[![Version](https://img.shields.io/badge/Version-0.1.1-blue?style=flat-square)](https://github.com/greggh/neovim-plugin-template/releases/tag/v0.1.1)
+[![Discussions](https://img.shields.io/github/discussions/greggh/neovim-plugin-template?style=flat-square&logo=github)](https://github.com/greggh/neovim-plugin-template/discussions)
 
 *A template for creating Neovim plugins with best practices and standardized structure*
 
@@ -194,9 +199,10 @@ This template is released under the MIT License. See the [LICENSE](LICENSE) file
 <p align="center">
   Made with ❤️ for the Neovim community
 </p>
+
 ## Discussions
 
-Have questions or ideas? Join the conversation in [GitHub Discussions](https://github.com/greggh/plugin-name/discussions).
+Have questions or ideas? Join the conversation in [GitHub Discussions](https://github.com/greggh/neovim-plugin-template/discussions).
 
 - **Questions**: For help with using or developing the plugin
 - **Ideas**: Suggest new features or improvements
