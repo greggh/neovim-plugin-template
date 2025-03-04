@@ -1,0 +1,1122 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A template for creating Neovim plugins with best practices and standardized structure">
+      
+      
+      
+        <link rel="canonical" href="https://greggh.github.io/neovim-plugin-template/GITHUB_BEST_PRACTICES/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>GitHub Repository Best Practices - Neovim Plugin Template</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#github-repository-best-practices" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Neovim Plugin Template" class="md-header__button md-logo" aria-label="Neovim Plugin Template" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Neovim Plugin Template
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GitHub Repository Best Practices
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/greggh/neovim-plugin-template" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    greggh/neovim-plugin-template
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../INSTALLATION/" class="md-tabs__link">
+        
+  
+    
+  
+  Installation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../FEATURES/" class="md-tabs__link">
+        
+  
+    
+  
+  Features
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../DEVELOPMENT/" class="md-tabs__link">
+        
+  
+    
+  
+  Development
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../CONTRIBUTING/" class="md-tabs__link">
+        
+  
+    
+  
+  Contributing
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Neovim Plugin Template" class="md-nav__button md-logo" aria-label="Neovim Plugin Template" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Neovim Plugin Template
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/greggh/neovim-plugin-template" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    greggh/neovim-plugin-template
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INSTALLATION/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FEATURES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DEVELOPMENT/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#repository-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repository Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Repository Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#essential-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Essential Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-but-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional but Recommended
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#semantic-versioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantic Versioning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-modulefile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version Module/File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changelog-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changelog Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-specific-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub-Specific Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub-Specific Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Templates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-templates-githubissue_template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Issue Templates (.github/ISSUE_TEMPLATE/)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-request-template-githubpull_request_templatemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pull Request Template (.github/PULL_REQUEST_TEMPLATE.md)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-actions-workflows-githubworkflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Actions Workflows (.github/workflows/)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funding-configuration-githubfundingyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funding Configuration (.github/FUNDING.yml)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussions-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussions Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#readmemd-essential-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      README.md Essential Sections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developmentmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      DEVELOPMENT.md
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contributingmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      CONTRIBUTING.md
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acknowledgements-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acknowledgements Section
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-assurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Assurance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quality Assurance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linting-and-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linting and Formatting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-commit-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-commit Hooks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continuous-integration-continuous-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continuous Integration / Continuous Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Continuous Integration / Continuous Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ci-workflow-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      CI Workflow Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cd-workflow-components-if-applicable" class="md-nav__link">
+    <span class="md-ellipsis">
+      CD Workflow Components (if applicable)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Release Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Release Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      Community Building
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      License Selection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessibility-and-inclusivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessibility and Inclusivity
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="github-repository-best-practices">GitHub Repository Best Practices<a class="headerlink" href="#github-repository-best-practices" title="Permanent link">&para;</a></h1>
+<p>This document outlines comprehensive best practices for creating and maintaining high-quality GitHub repositories. These practices apply to projects of any language or framework and represent modern standards for open-source and professional software development.</p>
+<h2 id="repository-structure">Repository Structure<a class="headerlink" href="#repository-structure" title="Permanent link">&para;</a></h2>
+<h3 id="essential-files">Essential Files<a class="headerlink" href="#essential-files" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>README.md</strong> - Project introduction, key features, installation instructions, basic usage examples</li>
+<li><strong>LICENSE</strong> - Legal terms for code usage (MIT, Apache 2.0, GPL, etc.)</li>
+<li><strong>CONTRIBUTING.md</strong> - Guidelines for contributors</li>
+<li><strong>CODE_OF_CONDUCT.md</strong> - Community behavior standards (often using <a href="https://www.contributor-covenant.org/">Contributor Covenant</a>)</li>
+<li><strong>CHANGELOG.md</strong> - Chronological version history following <a href="https://keepachangelog.com/">Keep a Changelog</a> format</li>
+<li><strong>DEVELOPMENT.md</strong> - Detailed guide for setting up a development environment</li>
+<li><strong>.gitignore</strong> - Language/framework-specific patterns for files to ignore</li>
+</ul>
+<h3 id="optional-but-recommended">Optional but Recommended<a class="headerlink" href="#optional-but-recommended" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>SECURITY.md</strong> - Security policy and vulnerability reporting process</li>
+<li><strong>SUPPORT.md</strong> - How to get help with the project</li>
+<li><strong>.editorconfig</strong> - Consistent coding styles across editors</li>
+<li><strong>docs/</strong> - Extended documentation</li>
+<li><strong>examples/</strong> - Sample usage code</li>
+<li><strong>ROADMAP.md</strong> - Future development plans</li>
+</ul>
+<h2 id="version-management">Version Management<a class="headerlink" href="#version-management" title="Permanent link">&para;</a></h2>
+<h3 id="semantic-versioning">Semantic Versioning<a class="headerlink" href="#semantic-versioning" title="Permanent link">&para;</a></h3>
+<p>Follow <a href="https://semver.org/">Semantic Versioning 2.0.0</a> with MAJOR.MINOR.PATCH format:</p>
+<ul>
+<li><strong>MAJOR</strong> - Incompatible API changes</li>
+<li><strong>MINOR</strong> - Backward-compatible functionality</li>
+<li><strong>PATCH</strong> - Backward-compatible bug fixes</li>
+</ul>
+<h3 id="version-modulefile">Version Module/File<a class="headerlink" href="#version-modulefile" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Create a dedicated version file/module (<code>version.lua</code>, <code>version.js</code>, etc.)</li>
+<li>Reference this single source of truth throughout the codebase</li>
+<li>Update this file as part of release process</li>
+</ul>
+<h3 id="changelog-management">Changelog Management<a class="headerlink" href="#changelog-management" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Follow <a href="https://keepachangelog.com/">Keep a Changelog</a> format</li>
+<li>Group changes by type: Added, Changed, Deprecated, Removed, Fixed, Security</li>
+<li>Link to issues and pull requests where possible</li>
+<li>Include unreleased section for upcoming changes</li>
+<li>Date releases in ISO format (YYYY-MM-DD)</li>
+</ul>
+<h2 id="github-specific-configuration">GitHub-Specific Configuration<a class="headerlink" href="#github-specific-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="templates">Templates<a class="headerlink" href="#templates" title="Permanent link">&para;</a></h3>
+<h4 id="issue-templates-githubissue_template">Issue Templates (.github/ISSUE_TEMPLATE/)<a class="headerlink" href="#issue-templates-githubissue_template" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>bug_report.md</strong> - Template for bug reports with reproduction steps</li>
+<li><strong>feature_request.md</strong> - Template for new feature suggestions</li>
+<li><strong>config.yml</strong> - Configure issue form behavior</li>
+</ul>
+<h4 id="pull-request-template-githubpull_request_templatemd">Pull Request Template (.github/PULL_REQUEST_TEMPLATE.md)<a class="headerlink" href="#pull-request-template-githubpull_request_templatemd" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Changes made</li>
+<li>Related issues</li>
+<li>Testing done</li>
+<li>Checklist of requirements</li>
+</ul>
+<h3 id="github-actions-workflows-githubworkflows">GitHub Actions Workflows (.github/workflows/)<a class="headerlink" href="#github-actions-workflows-githubworkflows" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>ci.yml</strong> - Main CI workflow (lint, style, test)</li>
+<li><strong>release.yml</strong> - Automate release processes</li>
+<li><strong>docs.yml</strong> - Documentation building/publishing</li>
+</ul>
+<h3 id="funding-configuration-githubfundingyml">Funding Configuration (.github/FUNDING.yml)<a class="headerlink" href="#funding-configuration-githubfundingyml" title="Permanent link">&para;</a></h3>
+<ul>
+<li>GitHub Sponsors</li>
+<li>Open Collective</li>
+<li>Patreon</li>
+<li>Ko-fi</li>
+<li>Custom funding URLs</li>
+</ul>
+<h3 id="discussions-configuration">Discussions Configuration<a class="headerlink" href="#discussions-configuration" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Enable GitHub Discussions for Q&amp;A, ideas, announcements</li>
+<li>Configure categories and welcome message</li>
+<li>Direct simple questions to Discussions instead of Issues</li>
+</ul>
+<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
+<h3 id="readmemd-essential-sections">README.md Essential Sections<a class="headerlink" href="#readmemd-essential-sections" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Project name and logo</li>
+<li>Badges (build status, version, license)</li>
+<li>Brief description</li>
+<li>Key features list</li>
+<li>Installation instructions</li>
+<li>Basic usage examples</li>
+<li>Documentation links</li>
+<li>Contributing information</li>
+<li>License statement</li>
+<li>Acknowledgments</li>
+</ol>
+<h3 id="developmentmd">DEVELOPMENT.md<a class="headerlink" href="#developmentmd" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Prerequisites (languages, tools, dependencies)</li>
+<li>Development environment setup</li>
+<li>Cross-platform instructions (macOS, Linux, Windows)</li>
+<li>Step-by-step commands</li>
+<li>Project structure explanation</li>
+<li>Build process</li>
+<li>Testing approach</li>
+<li>Debugging tips</li>
+<li>Common issues and solutions</li>
+</ol>
+<h3 id="contributingmd">CONTRIBUTING.md<a class="headerlink" href="#contributingmd" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Code of conduct reference</li>
+<li>What contributions are welcomed</li>
+<li>Development setup link</li>
+<li>Coding standards/style guidelines</li>
+<li>Testing requirements</li>
+<li>Pull request process</li>
+<li>Review expectations</li>
+</ol>
+<h3 id="acknowledgements-section">Acknowledgements Section<a class="headerlink" href="#acknowledgements-section" title="Permanent link">&para;</a></h3>
+<p>The Acknowledgements section should be included in the README.md to:</p>
+<ol>
+<li><strong>Credit Dependencies</strong> - Recognize key libraries, frameworks, and tools your project relies on</li>
+<li><strong>Acknowledge Standards</strong> - Reference standards you follow (Semantic Versioning, Contributor Covenant, etc.)</li>
+<li><strong>Recognize Contributors</strong> - Highlight significant contributors or inspirations</li>
+<li><strong>Attribute Resources</strong> - Credit design assets, documentation templates, or other resources used</li>
+<li><strong>Format Recommendations</strong>:</li>
+<li>Include direct links to acknowledged projects</li>
+<li>Organize by categories for larger projects</li>
+<li>Briefly explain how each dependency or standard is used</li>
+<li>For tools and infrastructure, mention specific benefits they provide</li>
+</ol>
+<p>Example Acknowledgements section:
+<div class="highlight"><pre><span></span><code><span class="gu">## Acknowledgements</span>
+
+<span class="k">-</span><span class="w"> </span>[<span class="nt">Framework X</span>](<span class="na">https://example.com</span>) - The core framework this project builds upon
+<span class="k">-</span><span class="w"> </span>[<span class="nt">Library Y</span>](<span class="na">https://example.com</span>) - Used for handling complex data processing
+<span class="k">-</span><span class="w"> </span>[<span class="nt">Semantic Versioning</span>](<span class="na">https://semver.org/</span>) - Versioning standard used in this project
+<span class="k">-</span><span class="w"> </span>[<span class="nt">Contributor Covenant</span>](<span class="na">https://www.contributor-covenant.org/</span>) - Code of Conduct standard
+<span class="k">-</span><span class="w"> </span>[<span class="nt">Tool Z</span>](<span class="na">https://example.com</span>) - Build and optimization tooling
+<span class="k">-</span><span class="w"> </span>Project inspired by [<span class="nt">Original Concept</span>](<span class="na">https://example.com</span>) by [Original Author]
+</code></pre></div></p>
+<h2 id="quality-assurance">Quality Assurance<a class="headerlink" href="#quality-assurance" title="Permanent link">&para;</a></h2>
+<h3 id="linting-and-formatting">Linting and Formatting<a class="headerlink" href="#linting-and-formatting" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Language-appropriate linting tools</li>
+<li>Configuration files in repository root</li>
+<li>Consistent formatting rules</li>
+<li>Pre-commit hooks for automatic checking</li>
+</ul>
+<h3 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Unit, integration, and end-to-end tests</li>
+<li>Test coverage expectations</li>
+<li>Instructions for running tests locally</li>
+<li>Continuous integration test configuration</li>
+</ul>
+<h3 id="pre-commit-hooks">Pre-commit Hooks<a class="headerlink" href="#pre-commit-hooks" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Install via <a href="https://pre-commit.com/">pre-commit</a> framework</li>
+<li>Configure in <code>.pre-commit-config.yaml</code></li>
+<li>Include:</li>
+<li>Linting</li>
+<li>Formatting</li>
+<li>Basic tests</li>
+<li>Commit message validation</li>
+</ul>
+<h2 id="continuous-integration-continuous-deployment">Continuous Integration / Continuous Deployment<a class="headerlink" href="#continuous-integration-continuous-deployment" title="Permanent link">&para;</a></h2>
+<h3 id="ci-workflow-components">CI Workflow Components<a class="headerlink" href="#ci-workflow-components" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Setup</strong></li>
+<li>Multiple platform testing (Linux, macOS, Windows)</li>
+<li>Multiple version testing (language/framework versions)</li>
+<li>
+<p>Caching dependencies for speed</p>
+</li>
+<li>
+<p><strong>Validation</strong></p>
+</li>
+<li>Linting</li>
+<li>Code style checking</li>
+<li>
+<p>Type checking (if applicable)</p>
+</li>
+<li>
+<p><strong>Testing</strong></p>
+</li>
+<li>Unit tests</li>
+<li>Integration tests</li>
+<li>
+<p>Coverage reports</p>
+</li>
+<li>
+<p><strong>Building</strong></p>
+</li>
+<li>Compilation/build steps</li>
+<li>Artifact creation</li>
+</ol>
+<h3 id="cd-workflow-components-if-applicable">CD Workflow Components (if applicable)<a class="headerlink" href="#cd-workflow-components-if-applicable" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Release creation</strong></li>
+<li>Version bump automation</li>
+<li>Changelog generation</li>
+<li>
+<p>GitHub release creation</p>
+</li>
+<li>
+<p><strong>Publishing</strong></p>
+</li>
+<li>Package registry deployment</li>
+<li>Docker image publishing</li>
+<li>Documentation site deployment</li>
+</ol>
+<h2 id="release-process">Release Process<a class="headerlink" href="#release-process" title="Permanent link">&para;</a></h2>
+<h3 id="manual-steps">Manual Steps<a class="headerlink" href="#manual-steps" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Update version in dedicated version file</li>
+<li>Update CHANGELOG.md with changes</li>
+<li>Create pull request for release</li>
+<li>After merge, tag with version</li>
+<li>Create GitHub release with changelog excerpt</li>
+</ol>
+<h3 id="automated-steps">Automated Steps<a class="headerlink" href="#automated-steps" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Trigger release workflow</li>
+<li>Automatically:</li>
+<li>Build artifacts</li>
+<li>Run tests</li>
+<li>Create GitHub release</li>
+<li>Publish packages</li>
+</ol>
+<h2 id="community-building">Community Building<a class="headerlink" href="#community-building" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Set up community discussion forums</li>
+<li>Create clear path for first-time contributors</li>
+<li>Tag issues for new contributors</li>
+<li>Recognize contributions in releases</li>
+<li>Maintain responsive issue management</li>
+<li>Provide templates for common interactions</li>
+</ol>
+<h2 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Define security policy in SECURITY.md</li>
+<li>Set up security scanning in CI</li>
+<li>Handle vulnerability reports responsibly</li>
+<li>Document security considerations for users</li>
+<li>Regularly update dependencies</li>
+</ol>
+<h2 id="license-selection">License Selection<a class="headerlink" href="#license-selection" title="Permanent link">&para;</a></h2>
+<p>Choose an appropriate license based on your goals:</p>
+<ul>
+<li><strong>MIT</strong> - Simple, permissive</li>
+<li><strong>Apache 2.0</strong> - Permissive with patent protection</li>
+<li><strong>GPL</strong> - Copyleft, ensures derivatives remain open source</li>
+<li><strong>AGPL</strong> - Copyleft that also applies to network services</li>
+</ul>
+<h2 id="accessibility-and-inclusivity">Accessibility and Inclusivity<a class="headerlink" href="#accessibility-and-inclusivity" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Use inclusive language in documentation</li>
+<li>Provide alt text for images</li>
+<li>Ensure documentation is screen-reader friendly</li>
+<li>Consider internationalization/localization</li>
+</ol>
+<hr />
+<p>This document serves as a reference for creating and maintaining high-quality GitHub repositories. While not every project needs to implement all these practices, they represent standards that contribute to professional, accessible, and maintainable software development.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
