@@ -1,0 +1,184 @@
+*plugin-name.txt*  Description of your plugin functionality
+
+================================================================================
+CONTENTS                                                    *plugin-name-contents*
+
+1. Introduction ................ |plugin-name-introduction|
+2. Requirements ................ |plugin-name-requirements|
+3. Installation ................ |plugin-name-installation|
+4. Configuration ............... |plugin-name-configuration|
+5. Commands .................... |plugin-name-commands|
+6. Mappings .................... |plugin-name-mappings|
+7. API Functions ............... |plugin-name-api|
+8. Troubleshooting ............. |plugin-name-troubleshooting|
+9. Contributing ................ |plugin-name-contributing|
+10. License .................... |plugin-name-license|
+
+================================================================================
+1. Introduction                                      *plugin-name-introduction*
+
+A Neovim plugin that [brief description of what your plugin does].
+
+Key features:
+- Feature one
+- Feature two
+- Feature three
+
+================================================================================
+2. Requirements                                      *plugin-name-requirements*
+
+- Neovim >= 0.8.0
+- [Any other dependencies]
+
+Optional dependencies:
+- plenary.nvim (for tests)
+- which-key.nvim (for keymap integration)
+
+================================================================================
+3. Installation                                      *plugin-name-installation*
+
+Using lazy.nvim:
+>lua
+  {
+    "username/plugin-name",
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- if needed
+    },
+    config = function()
+      require("plugin-name").setup({
+        -- your configuration
+      })
+    end
+  }
+<
+
+Using packer.nvim:
+>lua
+  use {
+    'username/plugin-name',
+    requires = { 'nvim-lua/plenary.nvim' }, -- if needed
+    config = function()
+      require('plugin-name').setup({
+        -- your configuration
+      })
+    end
+  }
+<
+
+================================================================================
+4. Configuration                                    *plugin-name-configuration*
+
+The default configuration:
+>lua
+  require("plugin-name").setup({
+    enabled = true,
+    debug = false,
+    -- Add other default values
+  })
+<
+
+Configuration options:
+
+enabled~
+  Type: `boolean`
+  Default: `true`
+  Enable or disable the plugin.
+
+debug~
+  Type: `boolean`
+  Default: `false`
+  Enable debug mode with additional logging.
+
+[Add other configuration options here]
+
+================================================================================
+5. Commands                                              *plugin-name-commands*
+
+The plugin provides the following commands:
+
+*:PluginNameCommand*
+  Description of what this command does.
+
+*:PluginNameToggle*
+  Toggles the plugin on/off.
+
+================================================================================
+6. Mappings                                              *plugin-name-mappings*
+
+Default mappings (when using which-key):
+
+<leader>p~
+  Plugin name mappings prefix
+
+<leader>pf~
+  Execute plugin's main function
+
+<leader>pt~
+  Toggle plugin on/off
+
+================================================================================
+7. API Functions                                             *plugin-name-api*
+
+*plugin-name.setup()*
+  Set up the plugin with the provided configuration.
+  
+  Parameters:
+    {opts} - (table, optional) Configuration table.
+  
+  Example:
+>lua
+  require("plugin-name").setup({
+    enabled = true,
+    debug = true,
+  })
+<
+
+*plugin-name.some_function()*
+  Description of what this function does.
+  
+  Parameters:
+    [List parameters here]
+  
+  Returns:
+    [Describe the return value]
+  
+  Example:
+>lua
+  require("plugin-name").some_function()
+<
+
+*plugin-name.toggle()*
+  Toggle the plugin on/off.
+  
+  Example:
+>lua
+  require("plugin-name").toggle()
+<
+
+================================================================================
+8. Troubleshooting                                *plugin-name-troubleshooting*
+
+Common issues:
+
+Issue 1: [Description of common issue]
+Solution: [Detailed solution]
+
+Issue 2: [Description of another common issue]
+Solution: [Detailed solution]
+
+For more help, submit an issue: https://github.com/username/plugin-name/issues
+
+================================================================================
+9. Contributing                                      *plugin-name-contributing*
+
+Contributions are welcome! Please check the GitHub repository for details:
+https://github.com/username/plugin-name/blob/main/CONTRIBUTING.md
+
+================================================================================
+10. License                                              *plugin-name-license*
+
+This plugin is licensed under the MIT License.
+See the LICENSE file for more details.
+
+================================================================================
+vim:tw=80:ts=2:ft=help

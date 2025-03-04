@@ -1,0 +1,37 @@
+# Pre-commit hooks configuration
+# See https://pre-commit.com for more information
+repos:
+  # General hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+
+  # Lua formatting
+  - repo: https://github.com/JohnnyMorganz/StyLua
+    rev: v0.20.0
+    hooks:
+      - id: stylua
+        args: [--config-path=.stylua.toml]
+
+  # Custom local hooks (hooks-util integration)
+  - repo: local
+    hooks:
+      - id: luacheck
+        name: luacheck
+        description: "Lint Lua files with luacheck"
+        entry: luacheck
+        language: system
+        types: [lua]
+        args: [-q]
+        
+      - id: test
+        name: test
+        description: "Run Neovim tests"
+        entry: bash -c 'cd tests && nvim --headless -u tests/minimal_init.lua -c "lua require(\"plenary.busted\").run()"'
+        language: system
+        pass_filenames: false
+        always_run: true

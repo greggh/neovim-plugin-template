@@ -1,0 +1,19 @@
+# Configuration for hooks-util
+# See https://github.com/USERNAME/hooks-util for more information
+
+[general]
+# Default configuration
+verbosity = "normal"
+skip_missing_tools = true
+
+[luacheck]
+enabled = true
+args = ["-q"]
+
+[stylua]
+enabled = true
+args = ["--config-path=.stylua.toml"]
+
+[test]
+enabled = true
+command = "cd tests && nvim --headless -u tests/minimal_init.lua -c \"lua require('plenary.busted').run()\""

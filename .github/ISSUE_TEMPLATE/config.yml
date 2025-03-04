@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: GitHub Discussions
+    url: https://github.com/username/project-name/discussions
+    about: Please ask and answer questions here.
+  - name: Project Documentation
+    url: https://github.com/username/project-name#documentation
+    about: Check if your question is answered in the documentation.
+  - name: Security Issue
+    url: https://github.com/username/project-name/security/policy
+    about: Please report security vulnerabilities according to our security policy.
