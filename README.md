@@ -1,8 +1,8 @@
 # Neovim Plugin Template
 
-[![GitHub License](https://img.shields.io/github/license/username/plugin-name?style=flat-square)](./LICENSE)
+[![GitHub License](https://img.shields.io/github/license/greggh/plugin-name?style=flat-square)](./LICENSE)
 [![Neovim Minimum Version](https://img.shields.io/badge/Neovim-0.8+-57A143?style=flat-square&logo=neovim)](https://neovim.io)
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/username/plugin-name/ci.yml?branch=main&style=flat-square&logo=github)](https://github.com/username/plugin-name/actions/workflows/ci.yml)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/greggh/plugin-name/ci.yml?branch=main&style=flat-square&logo=github)](https://github.com/greggh/plugin-name/actions/workflows/ci.yml)
 
 *A template for creating Neovim plugins with best practices and standardized structure*
 
@@ -47,7 +47,7 @@ This repository provides a template for creating Neovim plugins with a standardi
 
 1. Use this template to create a new repository:
    ```bash
-   git clone https://github.com/username/neovim-plugin-template.git my-awesome-plugin
+   git clone https://github.com/greggh/neovim-plugin-template.git my-awesome-plugin
    cd my-awesome-plugin
    ```
 
@@ -64,7 +64,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
 {
-  "username/plugin-name",
+  "greggh/plugin-name",
   dependencies = {
     -- Add dependencies here
   },
@@ -80,7 +80,7 @@ Using [packer.nvim](https://github.com/wbthomason/packer.nvim):
 
 ```lua
 use {
-  'username/plugin-name',
+  'greggh/plugin-name',
   requires = {
     -- Add dependencies here
   },
@@ -174,7 +174,7 @@ Lint code with Luacheck:
 luacheck .
 ```
 
-Both tools are integrated with the pre-commit hooks when using [hooks-util](https://github.com/username/hooks-util).
+Both tools are integrated with the pre-commit hooks when using [hooks-util](https://github.com/greggh/hooks-util).
 
 ## License
 
@@ -187,7 +187,7 @@ This template is released under the MIT License. See the [LICENSE](LICENSE) file
 - [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) - Testing framework
 - [StyLua](https://github.com/JohnnyMorganz/StyLua) - Lua formatter
 - [Luacheck](https://github.com/lunarmodules/luacheck) - Lua linter
-- [hooks-util](https://github.com/username/hooks-util) - Git hooks framework
+- [hooks-util](https://github.com/greggh/hooks-util) - Git hooks framework
 
 ---
 
@@ -196,7 +196,7 @@ This template is released under the MIT License. See the [LICENSE](LICENSE) file
 </p>
 ## Discussions
 
-Have questions or ideas? Join the conversation in [GitHub Discussions](https://github.com/USERNAME/plugin-name/discussions).
+Have questions or ideas? Join the conversation in [GitHub Discussions](https://github.com/greggh/plugin-name/discussions).
 
 - **Questions**: For help with using or developing the plugin
 - **Ideas**: Suggest new features or improvements

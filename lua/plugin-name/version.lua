@@ -7,7 +7,7 @@ M.version = "0.1.0"
 
 -- Other version information
 M.min_neovim_version = "0.8.0"
-M.homepage = "https://github.com/USERNAME/plugin-name"
+M.homepage = "https://github.com/greggh/plugin-name"
 M.license = "MIT"
 
 -- Version check function
