@@ -9,6 +9,8 @@ jobs:
   build:
     name: Create Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -37,5 +39,4 @@ jobs:
           name: ${{ steps.get_version.outputs.VERSION }}
           draft: false
           prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ github.token }}
