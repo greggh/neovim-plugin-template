@@ -25,16 +25,20 @@ jobs:
       - name: Install LuaRocks
         uses: leafo/gh-actions-luarocks@v4
       
-      - name: Install Luacheck and StyLua
+      - name: Install Dependencies
         run: |
-          # Make sure we have the correct PATH and environment for LuaRocks
-          eval "$(luarocks path --bin)"
-          # Install dependencies
+          # Install luacheck via LuaRocks
           luarocks install luacheck
-          luarocks install stylua
+          
+          # Install StyLua binary directly (latest version)
+          STYLUA_VERSION="2.0.2"
+          curl -sL "https://github.com/JohnnyMorganz/StyLua/releases/download/v${STYLUA_VERSION}/stylua-linux-x86_64.zip" -o stylua.zip
+          unzip -q stylua.zip
+          chmod +x stylua
+          sudo mv stylua /usr/local/bin/
+          
           # Verify installations
           which luacheck
-          which stylua
           stylua --version
       
       - name: Fix Linting Issues
@@ -101,7 +105,12 @@ jobs:
             echo "Tests directory found, running tests..."
             if [ -f tests/minimal-init.lua ]; then
               echo "Using minimal-init.lua for tests"
-              cd tests && nvim --headless --noplugin -u minimal-init.lua -c "lua require('plenary.busted').run()" || exit 1
+              # Create test pattern file for plenary to find tests
+              cd tests && mkdir -p .plenary-busted
+              echo "return {'spec'}" > .plenary-busted/pattern.lua
+              
+              # Run tests with full path to spec directory
+              nvim --headless --noplugin -u minimal-init.lua -c "lua require('plenary.busted').run('./spec')" || exit 1
             else
               echo "No minimal-init.lua found, skipping tests"
             fi
