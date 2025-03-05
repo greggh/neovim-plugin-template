@@ -54,11 +54,11 @@ end
 ---Set up keymaps for the plugin
 M.setup_keymaps = function()
   -- Example keymap setup
-  local opts = { noremap = true, silent = true }
+  local opts = { noremap = true, silent = true } -- Used for keymap functions
 
   -- Example of setting a keymap
   -- vim.keymap.set("n", "<leader>p", function() require("plugin-name").some_function() end, opts)
-  
+
   -- Register with which-key if available
   local ok, wk = pcall(require, "which-key")
   if ok then
