@@ -143,11 +143,11 @@ require("plugin-name").setup({
    - Luacheck for linting
    - StyLua for formatting
 
-3. Set up pre-commit hooks:
+3. Set up pre-commit hooks (important first step!):
    ```bash
    ./scripts/setup-hooks.sh
    ```
-   This will enable automatic formatting, linting, and testing before each commit.
+   This will enable automatic formatting, linting, and testing before each commit. Make sure to run this before making any changes to ensure code quality.
 
 ### Directory Structure
 
@@ -173,6 +173,11 @@ require("plugin-name").setup({
 ```
 
 ### Testing
+
+Before making changes, ensure your development environment is set up with pre-commit hooks:
+```bash
+./scripts/setup-hooks.sh
+```
 
 Run tests with:
 
