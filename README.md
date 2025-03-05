@@ -130,6 +130,25 @@ require("plugin-name").setup({
 
 ## Development
 
+### Setting Up Development Environment
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/username/plugin-name.git
+   cd plugin-name
+   ```
+
+2. Install development dependencies:
+   - Neovim 0.8+
+   - Luacheck for linting
+   - StyLua for formatting
+
+3. Set up pre-commit hooks:
+   ```bash
+   ./scripts/setup-hooks.sh
+   ```
+   This will enable automatic formatting, linting, and testing before each commit.
+
 ### Directory Structure
 
 ```
@@ -146,6 +165,8 @@ require("plugin-name").setup({
 │   └── spec/             # Test specifications
 │       └── plugin_spec.lua
 ├── .github/              # GitHub specific files
+├── .githooks/            # Git hooks for development
+├── scripts/              # Development scripts
 ├── .stylua.toml          # StyLua configuration
 ├── .luacheckrc           # Luacheck configuration
 └── README.md             # This file
