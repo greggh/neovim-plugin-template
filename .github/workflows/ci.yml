@@ -29,7 +29,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y luarocks
           sudo luarocks install luacheck
-          sudo luarocks install stylua
+          
+          # Direct installation of StyLua instead of via LuaRocks
+          STYLUA_VERSION=0.20.0
+          curl -L -o stylua.zip "https://github.com/JohnnyMorganz/StyLua/releases/download/v${STYLUA_VERSION}/stylua-linux-x86_64.zip"
+          unzip stylua.zip
+          chmod +x stylua
+          sudo mv stylua /usr/local/bin/
       
       - name: Lint with Luacheck
         run: |
@@ -50,6 +56,7 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
+    timeout-minutes: 10  # Set a reasonable timeout
     strategy:
       matrix:
         neovim_version: ['stable']
@@ -69,9 +76,10 @@ jobs:
             echo "Tests directory found, running tests..."
             if [ -f tests/minimal-init.lua ]; then
               echo "Using minimal-init.lua for tests"
-              cd tests && nvim --headless -u minimal-init.lua -c "lua require('plenary.busted').run()" || exit 0
+              cd tests && nvim --headless -u minimal-init.lua -c "lua require('plenary.busted').run()" || exit 1
             else
               echo "No minimal-init.lua found, skipping tests"
+              exit 0
             fi
           else
             echo "No tests directory found, skipping tests"
