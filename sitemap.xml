@@ -2,30 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://greggh.github.io/neovim-plugin-template/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
     </url>
     <url>
          <loc>https://greggh.github.io/neovim-plugin-template/CONTRIBUTING/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
     </url>
     <url>
          <loc>https://greggh.github.io/neovim-plugin-template/DEVELOPMENT/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
     </url>
     <url>
          <loc>https://greggh.github.io/neovim-plugin-template/FEATURES/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
     </url>
     <url>
          <loc>https://greggh.github.io/neovim-plugin-template/GITHUB_BEST_PRACTICES/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
     </url>
     <url>
          <loc>https://greggh.github.io/neovim-plugin-template/IMPLEMENTATION_PLAN/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
     </url>
     <url>
          <loc>https://greggh.github.io/neovim-plugin-template/INSTALLATION/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
     </url>
 </urlset>
