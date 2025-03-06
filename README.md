@@ -1,3 +1,5 @@
+<div align="center">
+
 # Neovim Plugin Template
 
 [![GitHub License](https://img.shields.io/github/license/greggh/neovim-plugin-template?style=flat-square)](https://github.com/greggh/neovim-plugin-template/blob/main/LICENSE)
@@ -17,7 +19,11 @@
 [Usage](#usage) •
 [Configuration](#configuration) •
 [Development](#development) •
-[License](#license)
+[Contributing](#contributing) •
+[License](#license) •
+[Discussions](https://github.com/greggh/neovim-plugin-template/discussions)
+
+</div>
 
 ## Overview
 
@@ -32,12 +38,12 @@ This repository provides a template for creating Neovim plugins with a standardi
 
 ## Features
 
-- **Complete Structure**: All necessary files and directories for a Neovim plugin
-- **Documentation**: Templates for help docs and README
-- **Testing**: Plenary-based test setup with minimal configuration
-- **Code Quality**: StyLua and Luacheck configuration
-- **CI/CD**: GitHub Actions workflows for testing, linting and releases
-- **Community**: Templates for issues, PRs, and contributing guidelines
+- 📋 **Complete Structure** - All necessary files and directories for a Neovim plugin
+- 📚 **Documentation** - Templates for help docs and README
+- 🧪 **Testing** - Plenary-based test setup with minimal configuration
+- ✨ **Code Quality** - StyLua and Luacheck configuration
+- 🔄 **CI/CD** - GitHub Actions workflows for testing, linting and releases
+- 👥 **Community** - Templates for issues, PRs, and contributing guidelines
 
 ## Requirements
 
@@ -95,6 +101,15 @@ use {
     })
   end
 }
+```
+
+Using [vim-plug](https://github.com/junegunn/vim-plug):
+
+```vim
+Plug 'greggh/plugin-name'
+
+" In your init.vim after plug#end():
+lua require('plugin-name').setup({})
 ```
 
 ## Usage
@@ -207,6 +222,21 @@ luacheck .
 
 Both tools are integrated with the pre-commit hooks when using [hooks-util](https://github.com/greggh/hooks-util).
 
+## Contributing
+
+Contributions are welcome! Here's how to contribute to this template:
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request
+
+Please make sure to:
+- Follow the coding style (run StyLua)
+- Add tests for new features
+- Update documentation as needed
+
 ## License
 
 This template is released under the MIT License. See the [LICENSE](LICENSE) file for details.
@@ -220,12 +250,6 @@ This template is released under the MIT License. See the [LICENSE](LICENSE) file
 - [Luacheck](https://github.com/lunarmodules/luacheck) - Lua linter
 - [hooks-util](https://github.com/greggh/hooks-util) - Git hooks framework
 
----
-
-<p align="center">
-  Made with ❤️ for the Neovim community
-</p>
-
 ## Discussions
 
 Have questions or ideas? Join the conversation in [GitHub Discussions](https://github.com/greggh/neovim-plugin-template/discussions).
@@ -234,3 +258,9 @@ Have questions or ideas? Join the conversation in [GitHub Discussions](https://g
 - **Ideas**: Suggest new features or improvements
 - **Show and Tell**: Share how you're using this plugin
 - **General**: For any other topics related to this plugin
+
+---
+
+<div align="center">
+  <p>Made with ❤️ by <a href="https://github.com/greggh">greggh</a></p>
+</div>
