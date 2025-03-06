@@ -19,6 +19,17 @@ ignore = {
   "631", -- Line is too long (handled by StyLua)
 }
 
+-- Special configuration for scripts
+files["scripts/**/*.lua"] = {
+  globals = {
+    "print", "arg",
+  },
+}
+
+-- Ignore unused variables for scripts
+unused_secondaries = false
+unused = false
+
 -- Max line length check
 max_line_length = 100
 
