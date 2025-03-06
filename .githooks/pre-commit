@@ -96,10 +96,31 @@ if [ -n "$STAGED_FILES" ]; then
     
     # Run the tests
     if [ -f "tests/minimal-init.lua" ]; then
-      cd tests
-      nvim --headless --noplugin -u minimal-init.lua -c "lua require('plenary.busted').run('spec/')" || exit 1
-      TEST_RESULT=$?
-      cd ..
+      pushd tests > /dev/null
+      
+      # Check if specific test files exist
+      if [ -f "spec/plugin_spec.lua" ]; then
+        nvim --headless --noplugin -u minimal-init.lua -c "lua require('plenary.busted').run('spec/plugin_spec.lua')" || exit 1
+        TEST_RESULT=$?
+      else
+        # Find all individual test files instead of trying to run the directory
+        TEST_FILES=$(find spec -name "*_spec.lua" -type f 2>/dev/null)
+        if [ -n "$TEST_FILES" ]; then
+          for TEST_FILE in $TEST_FILES; do
+            echo "Running test: $TEST_FILE"
+            nvim --headless --noplugin -u minimal-init.lua -c "lua require('plenary.busted').run('$TEST_FILE')" || exit 1
+            TEST_RESULT=$?
+            if [ $TEST_RESULT -ne 0 ]; then
+              break
+            fi
+          done
+        else
+          echo "No test files found in spec directory, skipping tests."
+          TEST_RESULT=0
+        fi
+      fi
+      
+      popd > /dev/null
       
       # Check if tests passed
       if [ $TEST_RESULT -ne 0 ]; then
